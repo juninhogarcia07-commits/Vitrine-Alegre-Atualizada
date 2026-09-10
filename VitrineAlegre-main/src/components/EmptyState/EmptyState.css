@@ -1,0 +1,12 @@
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 24px;
+    text-align: center;
+  }
+  
+  .empty-state__mensagem {
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+  }

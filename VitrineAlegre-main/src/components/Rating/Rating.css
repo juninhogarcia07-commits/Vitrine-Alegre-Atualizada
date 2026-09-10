@@ -1,0 +1,33 @@
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .rating__estrelas {
+    display: flex;
+  }
+  
+  .rating__estrela {
+    color: var(--cor-estrela-vazia);
+    font-size: 0.9rem;
+  }
+  
+  .rating__estrela--cheia {
+    color: var(--cor-estrela);
+  }
+  
+  .rating__nota {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+  }
+  
+  /* Esconde visualmente, mas mantém disponível para leitores de tela */
+  .rating__texto-acessivel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }

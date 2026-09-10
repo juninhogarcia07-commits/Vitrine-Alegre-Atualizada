@@ -1,0 +1,158 @@
+.cart {
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 50vh;
+}
+
+.cart--vazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cart__link-voltar {
+  color: var(--cor-primaria);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cart__titulo {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.cart__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-cartao);
+  padding: 16px;
+}
+
+.cart__item-imagem {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: var(--cor-fundo);
+}
+
+.cart__item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart__item-titulo {
+  font-size: 1rem;
+}
+
+.cart__item-preco-unitario,
+.cart__item-quantidade {
+  color: var(--cor-texto-secundario);
+  font-size: 0.9rem;
+}
+.cart__item-remover {
+  align-self: flex-start;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid var(--cor-desconto);
+  border-radius: var(--raio-botao);
+  background-color: transparent;
+  color: var(--cor-desconto);
+  font-weight: 600;
+  cursor: pointer;
+}
+.cart__layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.cart__resumo {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-cartao);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 24px;
+}
+
+.cart__resumo-titulo {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.cart__resumo-linha {
+  display: flex;
+  justify-content: space-between;
+  color: var(--cor-texto-secundario);
+  font-size: 0.95rem;
+}
+
+.cart__resumo-linha--desconto {
+  color: var(--cor-sucesso);
+}
+
+.cart__resumo-linha--total {
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 12px;
+  margin-top: 4px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+.cart__botao-finalizar {
+  margin-top: 12px;
+  height: 48px;
+  border: none;
+  border-radius: var(--raio-botao);
+  background-color: var(--cor-acao);
+  color: var(--cor-primaria-escura);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Mobile: resumo vira barra fixa na parte inferior da tela */
+@media (max-width: 768px) {
+  .cart__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart {
+    /* Dá espaço na parte de baixo da página para o resumo fixo não cobrir o último item da lista */
+    padding-bottom: 220px;
+  }
+
+  .cart__resumo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+  }
+}

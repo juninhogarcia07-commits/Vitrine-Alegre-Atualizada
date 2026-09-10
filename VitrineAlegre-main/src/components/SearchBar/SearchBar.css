@@ -1,0 +1,8 @@
+.search-bar {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    border-radius: var(--raio-botao);
+    font-size: 0.95rem;
+  }

@@ -1,0 +1,28 @@
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
+  
+  .category-filter__pilula {
+    height: 36px;
+    padding: 0 16px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 999px;
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+  
+  .category-filter__pilula--ativa {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-superficie);
+    font-weight: 600;
+  }

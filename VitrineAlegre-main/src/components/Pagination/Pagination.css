@@ -1,0 +1,39 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 32px 24px;
+    flex-wrap: wrap;
+  }
+  
+  .pagination__lista {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+  }
+  
+  .pagination__botao,
+  .pagination__numero {
+    height: 40px;
+    min-width: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-botao);
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .pagination__botao:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  
+  .pagination__numero--ativo {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-superficie);
+    font-weight: 600;
+  }

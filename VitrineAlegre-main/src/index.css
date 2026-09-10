@@ -1,0 +1,61 @@
+/* Reset básico: remove espaçamentos padrão que cada navegador aplica diferente */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis globais de cor e medida do projeto Vitrine Alegre.
+   Usar variáveis evita "valores mágicos" espalhados pelo CSS. */
+:root {
+  --cor-primaria: #232A60;
+  --cor-primaria-escura: #171C42;
+  --cor-acao: #A6CE39;
+
+  --cor-fundo: #F4F5FA;
+  --cor-superficie: #FFFFFF;
+  --cor-borda: #E3E6EF;
+
+  --cor-texto: #2E2E2E;
+  --cor-texto-secundario: #6B7280;
+  --cor-texto-terciario: #9CA3AF;
+
+  --cor-desconto: #C2410C;
+  --cor-sucesso: #15803D;
+
+  --cor-estrela: #F59E0B;
+  --cor-estrela-vazia: #D8DBE4;
+
+  --largura-maxima: 1200px;
+  --raio-cartao: 12px;
+  --raio-botao: 8px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* Acessibilidade: garante que o foco do teclado seja sempre visível */
+:focus-visible {
+  outline: 2px solid var(--cor-acao);
+  outline-offset: 2px;
+}
+/* Skip link: fica invisível até receber foco por teclado (Tab),
+   permitindo pular a navegação do Header e ir direto ao conteúdo. */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background-color: var(--cor-primaria);
+  color: var(--cor-superficie);
+  padding: 8px 16px;
+  border-radius: 4px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 8px;
+}

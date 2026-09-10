@@ -1,0 +1,133 @@
+.product-detail {
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .product-detail__breadcrumb {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 24px;
+  }
+  
+  .product-detail__breadcrumb a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+  }
+  
+  .product-detail__conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  
+  .product-detail__imagem {
+    width: 100%;
+    border-radius: var(--raio-cartao);
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    padding: 24px;
+    object-fit: contain;
+  }
+  
+  .product-detail__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .product-detail__categoria {
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+    text-transform: capitalize;
+  }
+  
+  .product-detail__titulo {
+    font-size: 1.75rem;
+    color: var(--cor-texto);
+  }
+  
+  .product-detail__marca,
+  .product-detail__rating,
+  .product-detail__estoque {
+    color: var(--cor-texto-secundario);
+  }
+  
+  .product-detail__precos {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+  }
+  
+  .product-detail__preco-original {
+    font-size: 1rem;
+    color: var(--cor-texto-terciario);
+    text-decoration: line-through;
+  }
+  
+  .product-detail__preco-final {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+  }
+  
+  .product-detail__descricao {
+    margin-top: 12px;
+    line-height: 1.6;
+    color: var(--cor-texto);
+  }
+  
+  .product-detail__botao-adicionar {
+    margin-top: 16px;
+    height: 48px;
+    border: none;
+    border-radius: var(--raio-botao);
+    background-color: var(--cor-acao);
+    color: var(--cor-primaria-escura);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: flex-start;
+    padding: 0 32px;
+  }
+  
+  /* Tablet e mobile: empilha imagem e info verticalmente */
+  @media (max-width: 768px) {
+    .product-detail__conteudo {
+      grid-template-columns: 1fr;
+    }
+  }
+  .product-detail__sku {
+    color: var(--cor-texto-secundario);
+    font-size: 0.85rem;
+  }
+  
+  .product-detail__especificacoes {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--cor-borda);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .product-detail__especificacao-item {
+    display: flex;
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .product-detail__especificacao-item dt {
+    font-weight: 600;
+    min-width: 80px;
+  }
+  
+  .product-detail__especificacao-item dd {
+    color: var(--cor-texto-secundario);
+  }
+  .product-detail__acao-compra {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }

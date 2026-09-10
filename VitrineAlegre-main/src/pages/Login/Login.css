@@ -1,0 +1,73 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 24px;
+}
+
+.login__formulario {
+  width: 100%;
+  max-width: 360px;
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-cartao);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login__titulo {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.login__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+}
+
+.login__campo input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-botao);
+  font-size: 1rem;
+}
+
+.login__erro {
+  color: var(--cor-desconto);
+  font-size: 0.9rem;
+}
+
+.login__botao {
+  height: 44px;
+  border: none;
+  border-radius: var(--raio-botao);
+  background-color: var(--cor-acao);
+  color: var(--cor-primaria-escura);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login__botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login__dica {
+  font-size: 0.8rem;
+  color: var(--cor-texto-terciario);
+  text-align: center;
+}
+
+.login__link-voltar {
+  text-align: center;
+  color: var(--cor-primaria);
+  font-size: 0.9rem;
+  text-decoration: none;
+}

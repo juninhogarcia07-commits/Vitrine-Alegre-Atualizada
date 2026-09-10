@@ -1,0 +1,21 @@
+.footer {
+    min-height: 110px;
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-superficie);
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer__conteudo {
+    max-width: var(--largura-maxima);
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px;
+    text-align: center;
+  }
+  
+  .footer__texto-secundario {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--cor-texto-terciario);
+  }
