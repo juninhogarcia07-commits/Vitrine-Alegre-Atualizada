@@ -6,8 +6,12 @@ import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Cart from './pages/Cart/Cart';
 import Login from './pages/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
+import Toast from './components/Toast/Toast';
+import { useCart } from './context/CartContext';
 
 function App() {
+  const { mensagemToast, limparMensagemToast } = useCart();
+
   return (
     <div>
       <a href="#conteudo-principal" className="skip-link">
@@ -27,6 +31,8 @@ function App() {
       </div>
 
       <Footer />
+
+      <Toast mensagem={mensagemToast} aoFechar={limparMensagemToast} />
     </div>
   );
 }

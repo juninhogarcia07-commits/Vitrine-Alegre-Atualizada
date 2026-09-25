@@ -2,15 +2,8 @@ import { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext(null);
 
-// Chave usada para guardar o carrinho no localStorage.
-// Centralizada em uma constante para evitar erros de digitação se precisarmos usá-la em outro lugar.
 const CHAVE_LOCALSTORAGE = 'vitrine-alegre:carrinho';
 
-/**
- * Lê o carrinho salvo no localStorage, se existir.
- * Retorna um array vazio em caso de erro (dado corrompido, indisponível, etc.),
- * para nunca quebrar a aplicação por causa de um problema de armazenamento local.
- */
 function lerCarrinhoSalvo() {
   try {
     const dadosSalvos = localStorage.getItem(CHAVE_LOCALSTORAGE);
@@ -21,21 +14,16 @@ function lerCarrinhoSalvo() {
 }
 
 export function CartProvider({ children }) {
-  // Estado inicial "preguiçoso": a função lerCarrinhoSalvo só roda UMA VEZ,
-  // na primeira renderização — nunca mais depois disso. Isso evita ler o
-  // localStorage repetidamente a cada re-render, o que seria desnecessário
-  // e poderia causar inconsistências de performance.
   const [itens, setItens] = useState(lerCarrinhoSalvo);
 
-  // Sempre que "itens" mudar (adicionar, remover, alterar quantidade),
-  // salvamos automaticamente no localStorage.
+  // Mensagem do toast exibido ao adicionar um produto. Fica null quando não há nada a mostrar.
+  const [mensagemToast, setMensagemToast] = useState(null);
+
   useEffect(() => {
     try {
       localStorage.setItem(CHAVE_LOCALSTORAGE, JSON.stringify(itens));
     } catch {
-      // Se o localStorage estiver indisponível (ex: modo privado do navegador
-      // com restrições), a aplicação continua funcionando normalmente em memória,
-      // só não persiste entre sessões.
+      // Se o localStorage falhar, a aplicação continua funcionando só em memória.
     }
   }, [itens]);
 
@@ -53,6 +41,12 @@ export function CartProvider({ children }) {
 
       return [...itensAtuais, { produto, quantidade }];
     });
+
+    setMensagemToast(`${produto.title} adicionado ao carrinho`);
+  }
+
+  function limparMensagemToast() {
+    setMensagemToast(null);
   }
 
   function aumentarQuantidade(produtoId) {
@@ -90,6 +84,8 @@ export function CartProvider({ children }) {
     diminuirQuantidade,
     removerProduto,
     quantidadeTotalItens,
+    mensagemToast,
+    limparMensagemToast,
   };
 
   return <CartContext.Provider value={valor}>{children}</CartContext.Provider>;
