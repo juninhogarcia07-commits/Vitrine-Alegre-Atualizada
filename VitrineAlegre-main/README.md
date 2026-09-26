@@ -1,8 +1,9 @@
 # 🛍️ Vitrine Alegre
 
-E-commerce fictício desenvolvido como atividade acadêmica, consumindo a API pública [DummyJSON](https://dummyjson.com/) para exibir produtos reais em um fluxo completo de vitrine, detalhe de produto e carrinho de compras.
+🔗 **Repositório:** https://github.com/juninhogarcia07-commits/Vitrine-Alegre-Atualizada
+🌐 **Site publicado:** https://vitrine-alegre-atualizada.vercel.app
 
-🔗 **Deploy:** [vitrine-alegre-atualizada.vercel.app](https://vitrine-alegre-atualizada.vercel.app)
+E-commerce fictício desenvolvido como atividade acadêmica, consumindo a API pública [DummyJSON](https://dummyjson.com/) para exibir produtos reais em um fluxo completo de vitrine, detalhe de produto e carrinho de compras.
 
 ---
 
@@ -17,6 +18,10 @@ O Vitrine Alegre é uma aplicação React que simula uma loja virtual completa, 
 - Tratamento completo de estados de interface (carregando, erro, vazio, sucesso)
 - Layout responsivo (desktop, tablet e mobile)
 - Recursos de acessibilidade (navegação por teclado, `aria-labels`, skip link)
+
+> ⚠️ **Nota sobre escopo:** a especificação oficial da atividade indica explicitamente que login não faz parte do escopo obrigatório. A funcionalidade foi implementada mesmo assim, como um extra opcional, para demonstrar o uso de Context API e integração com autenticação de uma API real. Essa decisão está documentada em `DIARIO-DA-IA.md` (Erro 5).
+
+---
 
 ---
 
